@@ -49,6 +49,7 @@ class AppKernel extends Kernel
 
             // Enable this if you want to audit backend action
             new SimpleThings\EntityAudit\SimpleThingsEntityAuditBundle(),
+            new Cooperativa\Bundle\AdminBundle\CooperativaAdminBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
