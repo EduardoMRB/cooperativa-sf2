@@ -1,4 +1,4 @@
--<?php
+<?php
 
 namespace Cooperativa\Bundle\AdminBundle\Admin;
 
@@ -13,7 +13,7 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
  *
  * Classe para definir campos, grid e filtros para produtos no painel administrativo
  */
-class ProductAdmin extends Admin
+class ProdutoAdmin extends Admin
 {
     /**
      * Configura campos do formulário de cadastro e edição de produtos
@@ -23,7 +23,10 @@ class ProductAdmin extends Admin
      */
     public function configureFormFields(FormMapper $formMapper)
     {
-        return $formMapper;
+        return $formMapper
+            ->add('nome')
+            ->add('valorKg')
+        ;
     }
 
     /**
@@ -34,7 +37,10 @@ class ProductAdmin extends Admin
      */
     protected function configureListFields(ListMapper $listMapper)
     {
-        return $listMapper;
+        return $listMapper
+            ->addIdentifier('nome')
+            ->add('valorKg')
+        ;
     }
 
     /**
@@ -45,6 +51,9 @@ class ProductAdmin extends Admin
      */
     protected function configureDatagridFilters(DatagridMapper $filter)
     {
-        return $filter;
+        return $filter
+            ->add('nome')
+            ->add('valorKg')
+        ;
     }
 }

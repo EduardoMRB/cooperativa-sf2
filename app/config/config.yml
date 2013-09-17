@@ -6,6 +6,7 @@ imports:
     # Sonata Bundles
     - { resource: sonata/sonata_admin.yml }
     - { resource: sonata/sonata_user.yml }
+    - { resource: sonata/sonata_block.yml }
 
 framework:
     #esi:             ~

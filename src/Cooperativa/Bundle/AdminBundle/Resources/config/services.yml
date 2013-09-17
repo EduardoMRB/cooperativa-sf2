@@ -2,6 +2,8 @@ parameters:
 #    cooperativa_admin.example.class: Cooperativa\Bundle\AdminBundle\Example
 
 services:
-#    cooperativa_admin.example:
-#        class: %cooperativa_admin.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+  sonata.admin.produto:
+    class: Cooperativa\Bundle\AdminBundle\Admin\ProdutoAdmin
+    tags:
+      - { name: sonata.admin, manager_type: orm, group: produtos, label: Produtos }
+    arguments: [null, Cooperativa\Bundle\AdminBundle\Entity\Produto, null]

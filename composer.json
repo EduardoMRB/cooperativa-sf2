@@ -36,6 +36,8 @@
         "sonata-project/intl-bundle": "~2.1",
         "sonata-project/doctrine-orm-admin-bundle": "2.2.*@dev",
         "sonata-project/user-bundle": "2.2.*@dev",
+        "sonata-project/block-bundle": "dev-master",
+        "sonata-project/formatter-bundle": "dev-master",
 
         "dflydev/markdown": "~1.0",
         "simplethings/entity-audit-bundle": "~0.5",
