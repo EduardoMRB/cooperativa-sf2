@@ -35,6 +35,16 @@ class Estoque
      */
     private $entregue;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Produtor")
+     */
+    private $produtor;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Produto")
+     */
+    private $produto;
+
 
     /**
      * Get id
@@ -90,5 +100,29 @@ class Estoque
     public function getEntregue()
     {
         return $this->entregue;
+    }
+
+    public function setProduto(Produto $produto)
+    {
+    	$this->produto = $produto;
+
+    	return $this;
+    }
+
+    public function getProduto()
+    {
+    	return $this->produto;
+    }
+
+    public function setProdutor(Produtor $produtor)
+    {
+    	$this->produtor = $produtor;
+
+    	return $this;
+    }
+
+    public function getProdutor()
+    {
+    	return $this->produtor;
     }
 }
