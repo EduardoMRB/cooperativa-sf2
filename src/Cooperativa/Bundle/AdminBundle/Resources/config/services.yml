@@ -15,7 +15,7 @@ services:
     arguments: [null, Cooperativa\Bundle\AdminBundle\Entity\Produtor, null]
 
   sonata.admin.entidade:
-    class: Cooperativa\Bundle\AdminBundle\EntidadeAdmin
+    class: Cooperativa\Bundle\AdminBundle\Admin\EntidadeAdmin
     tags:
       - { name: sonata.admin, manager_type: orm, group: Cadastros, label: Entidades }
     arguments: [null, Cooperativa\Bundle\AdminBundle\Entity\Entidade, null]
