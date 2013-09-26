@@ -13,3 +13,15 @@ services:
     tags:
       - { name: sonata.admin, manager_type: orm, group: contato, label: Contato }
     arguments: [null, Cooperativa\Bundle\AdminBundle\Entity\Contato, null]
+
+  sonata.admin.produtor:
+    class: Cooperativa\Bundle\AdminBundle\Admin\ProdutorAdmin
+    tags: 
+      - { name: sonata.admin, manager_type: orm, group: Cadastros, label: Produtores }
+    arguments: [null, Cooperativa\Bundle\AdminBundle\Entity\Produtor, null]
+
+  sonata.admin.entidade:
+    class: Cooperativa\Bundle\AdminBundle\Admin\EntidadeAdmin
+    tags:
+      - { name: sonata.admin, manager_type: orm, group: Cadastros, label: Entidades }
+    arguments: [null, Cooperativa\Bundle\AdminBundle\Entity\Entidade, null]
