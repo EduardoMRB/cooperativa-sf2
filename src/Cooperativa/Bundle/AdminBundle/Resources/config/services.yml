@@ -5,5 +5,17 @@ services:
   sonata.admin.produto:
     class: Cooperativa\Bundle\AdminBundle\Admin\ProdutoAdmin
     tags:
-      - { name: sonata.admin, manager_type: orm, group: produtos, label: Produtos }
+      - { name: sonata.admin, manager_type: orm, group: Produtos, label: Produtos }
     arguments: [null, Cooperativa\Bundle\AdminBundle\Entity\Produto, null]
+
+  sonata.admin.produtor:
+    class: Cooperativa\Bundle\AdminBundle\Admin\ProdutorAdmin
+    tags: 
+      - { name: sonata.admin, manager_type: orm, group: Cadastros, label: Produtores }
+    arguments: [null, Cooperativa\Bundle\AdminBundle\Entity\Produtor, null]
+
+  sonata.admin.entidade:
+    class: Cooperativa\Bundle\AdminBundle\Admin\EntidadeAdmin
+    tags:
+      - { name: sonata.admin, manager_type: orm, group: Cadastros, label: Entidades }
+    arguments: [null, Cooperativa\Bundle\AdminBundle\Entity\Entidade, null]
