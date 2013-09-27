@@ -28,6 +28,20 @@ class Pagamento
      */
     private $valor;
 
+    /**
+     * @var \DateTime
+     * 
+     * @ORM\Column(name="data", type="date")
+     */
+    private $data;
+
+    /**
+     * @var Produtor
+     * 
+     * @ORM\ManyToOne(targetEntity="Produtor")
+     */
+    private $produtor;
+
 
     /**
      * Get id
@@ -60,5 +74,29 @@ class Pagamento
     public function getValor()
     {
         return $this->valor;
+    }
+
+    public function setData(\DateTime $data)
+    {
+        $this->data = $data;
+
+        return $this;
+    }
+
+    public function getData()
+    {
+        return $this->data;
+    }
+
+    public function setProdutor(Produtor $produtor)
+    {
+        $this->produtor = $produtor;
+
+        return $this;
+    }
+
+    public function getProdutor()
+    {
+        return $this->produtor;
     }
 }
