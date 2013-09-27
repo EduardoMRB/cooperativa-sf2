@@ -99,4 +99,9 @@ class Pagamento
     {
         return $this->produtor;
     }
+
+    public function __toString()
+    {
+        //return $this->getProdutor()->getNome() . ' - ' . $this->getData();
+    }
 }

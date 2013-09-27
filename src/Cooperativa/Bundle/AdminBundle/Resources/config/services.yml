@@ -31,3 +31,9 @@ services:
     tags:
       - { name: sonata.admin, manager_type: orm, group: Produtos, label: Estoque }
     arguments: [null, Cooperativa\Bundle\AdminBundle\Entity\Estoque, null]
+
+  sonata.admin.pagamento:
+    class: Cooperativa\Bundle\AdminBundle\Admin\PagamentoAdmin
+    tags:
+      - { name: sonata.admin, manager_type: orm, group: Operações, label: Pagamento }
+    arguments: [null, Cooperativa\Bundle\AdminBundle\Entity\Pagamento, null]
