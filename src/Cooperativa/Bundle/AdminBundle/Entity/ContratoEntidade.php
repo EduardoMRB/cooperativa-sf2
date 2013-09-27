@@ -37,14 +37,11 @@ class ContratoEntidade
     private $ativo;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Entidade")
+     * @var Entidade
+     * 
+     * @ORM\ManyToOne(targetEntity="Entidade")
      */
-    private $entidades;
-
-    public function __construct()
-    {
-        $this->entidades = new ArrayCollection();
-    }
+    private $entidade;
 
     /**
      * Get id
@@ -102,18 +99,15 @@ class ContratoEntidade
         return $this->ativo;
     }
 
-    public function addEntidade($entidade)
+    public function setEntidade(Entidade $entidade)
     {
-        $this->entidades->add($entidade);
+        $this->entidade = $entidade;
+
+        return $this;
     }
 
-    public function removeEntidade($entidade)
+    public function getEntidade()
     {
-        $this->entidades->removeElement($entidade);
-    }
-
-    public function getContratos()
-    {
-        return $this->entidades;
+        return $this->entidade;
     }
 }

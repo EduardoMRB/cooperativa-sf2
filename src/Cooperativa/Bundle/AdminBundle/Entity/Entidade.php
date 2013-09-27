@@ -109,4 +109,9 @@ class Entidade
     {
         return $this->contato;
     }
+
+    public function __toString()
+    {
+    	return $this->getNome();
+    }
 }

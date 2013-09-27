@@ -42,14 +42,11 @@ class ProdutorContrato
     protected $data;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Produtor")
+     * @var Produtor
+     * 
+     * @ORM\ManyToOne(targetEntity="Produtor")
      */
-    protected $contrato;
-
-    public function __construct()
-    {
-        $this->contrato = new ArrayCollection();
-    }
+    protected $produtor;
 
     /**
      * @param boolean $ativo
@@ -68,18 +65,9 @@ class ProdutorContrato
         return $this->ativo;
     }
 
-    /**
-     * @param mixed $contrato
-     */
-    public function addContrato($contrato)
+    public function setProdutor(Produtor $produtor)
     {
-        $this->contrato->add($contrato);
-        return $this;
-    }
-
-    public function removeContrato($contrato)
-    {
-        $this->contrato->removeElement($contrato);
+        $this->produtor = $produtor;
 
         return $this;
     }
@@ -87,7 +75,7 @@ class ProdutorContrato
     /**
      * @return mixed
      */
-    public function getContrato()
+    public function getProdutor()
     {
         return $this->contrato;
     }

@@ -43,3 +43,9 @@ services:
     tags:
       - { name: sonata.admin, manager_type: orm, group: Operações, label: Contrato de produtor }
     arguments: [null, Cooperativa\Bundle\AdminBundle\Entity\ProdutorContrato, null]
+
+  sonata.admin.entidade_contrato:
+    class: Cooperativa\Bundle\AdminBundle\Admin\ContratoEntidadeAdmin
+    tags:
+      - { name: sonata.admin, manager_type: orm, group: Operações, label: Contrato de entidade }
+    arguments: [null, Cooperativa\Bundle\AdminBundle\Entity\ContratoEntidade, null]

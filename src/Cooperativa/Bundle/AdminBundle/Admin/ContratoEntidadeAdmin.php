@@ -7,36 +7,34 @@ use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 
-class ProdutorContratoAdmin extends Admin
+class ContratoEntidadeAdmin extends Admin
 {
     public function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('numeroEntregas')
+            ->add('percentual')
             ->add('ativo')
-            ->add('data')
-            ->add('produtor', 'sonata_type_model_list')
+            ->add('entidade', 'sonata_type_model_list')
         ;
     }
 
     public function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('numeroEntregas')
+            ->add('percentual')
+            ->add('entidade')
             ->add('ativo')
-            ->add('data')
-            ->add('produtor')
         ;
     }
 
     public function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->addIdentifier('data')
+            ->add('percentual')
             ->add('ativo', null, array(
                 'editable' => true,
             ))
-            ->addIdentifier('produtor')
+            ->add('entidade')
         ;
     }
 }
