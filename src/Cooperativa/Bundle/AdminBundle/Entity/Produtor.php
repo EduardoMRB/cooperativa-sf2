@@ -110,4 +110,9 @@ class Produtor
     {
         return $this->contato;
     }
+
+    public function __toString()
+    {
+        return $this->nome;
+    }
 }
