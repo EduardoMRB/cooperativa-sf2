@@ -6,6 +6,7 @@ use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
+use Cooperativa\Bundle\AdminBundle\Form\ContatoType;
 
 class ProdutorAdmin extends Admin
 {
@@ -14,6 +15,7 @@ class ProdutorAdmin extends Admin
         return $formMapper
             ->add('nome')
             ->add('cnpj', null, array('label' => 'CPF/CNPJ'))
+            ->add('contato', 'sonata_type_model_list')
         ;
     }
 
@@ -29,7 +31,7 @@ class ProdutorAdmin extends Admin
     {
         return $datagridMapper
             ->add('nome')
-            ->add('cpnj', null, array('label' => 'CPF/CPNJ'))
+            ->add('cnpj', null, array('label' => 'CPF/CPNJ'))
         ;
     }
 }

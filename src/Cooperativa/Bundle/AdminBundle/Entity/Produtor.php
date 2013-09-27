@@ -35,6 +35,13 @@ class Produtor
      */
     private $cnpj;
 
+    /**
+     * @var integer
+     * 
+     * @ORM\OneToOne(targetEntity="Contato", cascade="remove")
+     */
+    private $contato;
+
 
     /**
      * Get id
@@ -90,5 +97,17 @@ class Produtor
     public function getCnpj()
     {
         return $this->cnpj;
+    }
+
+    public function setContato(Contato $contato)
+    {
+        $this->contato = $contato;
+
+        return $this;
+    }
+
+    public function getContato()
+    {
+        return $this->contato;
     }
 }

@@ -13,7 +13,7 @@ class Contato
     /**
      * @ORM\Column(name="id", type="integer") 
      * @ORM\Id()
-     * @ORM\GeneratedValue(stratagy="AUTO")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
     
@@ -64,5 +64,8 @@ class Contato
         return $this;
     }
 
-    
+    public function __toString()
+    {
+        return $this->email . ' - ' . $this->telefone;
+    }    
 }
