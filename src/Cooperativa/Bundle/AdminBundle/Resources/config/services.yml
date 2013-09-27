@@ -7,11 +7,11 @@ services:
     tags:
       - { name: sonata.admin, manager_type: orm, group: Produtos, label: Produtos }
     arguments: [null, Cooperativa\Bundle\AdminBundle\Entity\Produto, null]
-    
+
   sonata admin.contato:
     class: Cooperativa\Bundle\AdminBundle\Admin\ContatoAdmin
     tags:
-      - { name: sonata.admin, manager_type: orm, group: contato, label: Contato }
+      - { name: sonata.admin, manager_type: orm, group: Contato, label: Contato }
     arguments: [null, Cooperativa\Bundle\AdminBundle\Entity\Contato, null]
 
   sonata.admin.produtor:
