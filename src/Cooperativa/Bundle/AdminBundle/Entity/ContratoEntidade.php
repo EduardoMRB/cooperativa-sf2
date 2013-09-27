@@ -39,11 +39,11 @@ class ContratoEntidade
     /**
      * @ORM\ManyToMany(targetEntity="Entidade")
      */
-    private $contratos;
+    private $entidades;
 
     public function __construct()
     {
-        $this->contratos = new ArrayCollection();
+        $this->entidades = new ArrayCollection();
     }
 
     /**
@@ -102,18 +102,18 @@ class ContratoEntidade
         return $this->ativo;
     }
 
-    public function addContratos($contrato)
+    public function addEntidade($entidade)
     {
-        $this->contratos->add($contrato);
+        $this->entidades->add($entidade);
     }
 
-    public function removeContratos($contrato)
+    public function removeEntidade($entidade)
     {
-        $this->contratos->removeElement($contrato);
+        $this->entidades->removeElement($entidade);
     }
 
     public function getContratos()
     {
-        return $this->contratos;
+        return $this->entidades;
     }
 }
