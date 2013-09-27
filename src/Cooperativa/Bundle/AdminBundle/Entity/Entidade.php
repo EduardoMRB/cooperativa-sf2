@@ -35,6 +35,12 @@ class Entidade
      */
     private $cnpj;
 
+    /**
+     * @var interger
+     * 
+     * @ORM\OneToOne(targetEntity="Contato", cascade="remove")
+     */
+    private $contato;
 
     /**
      * Get id
@@ -90,5 +96,17 @@ class Entidade
     public function getCnpj()
     {
         return $this->cnpj;
+    }
+
+    public function setContato(Contato $contato)
+    {
+        $this->contato = $contato;
+
+        return $this;
+    }
+
+    public function getContato()
+    {
+        return $this->contato;
     }
 }

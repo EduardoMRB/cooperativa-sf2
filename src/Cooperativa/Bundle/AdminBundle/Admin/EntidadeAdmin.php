@@ -14,6 +14,7 @@ class EntidadeAdmin extends Admin
         return $formMapper
             ->add('nome')
             ->add('cnpj')
+            ->add('contato', 'sonata_type_model_list')
         ;
     }
 
