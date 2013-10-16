@@ -3,13 +3,14 @@
 namespace Cooperativa\Bundle\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\Common\Collections\ArrayCollection;
+use Cooperativa\Bundle\AdminBundle\Validator\Constraints as Assert;
 
 /**
  * ContratoEntidade
  *
  * @ORM\Table(name="contratoentidade")
  * @ORM\Entity
+ * @Assert\UnicoContratoEntidadeAtivo
  */
 class ContratoEntidade
 {

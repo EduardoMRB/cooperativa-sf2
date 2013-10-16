@@ -26,7 +26,7 @@ class ContatoAdmin extends Admin
             ->add('email');
     }
     
-    public function configureDatagridFilters(DatagridMapper $filter) 
+    public function configureDatagridFilters(DatagridMapper $filter)
     {
         return $filter
             ->add('endereco')

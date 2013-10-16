@@ -49,3 +49,9 @@ services:
     tags:
       - { name: sonata.admin, manager_type: orm, group: Operações, label: Contrato de entidade }
     arguments: [null, Cooperativa\Bundle\AdminBundle\Entity\ContratoEntidade, null]
+
+  validator.unique.contrato.entidade.ativo:
+    class: Cooperativa\Bundle\AdminBundle\Validator\Constraints\UnicoContratoEntidadeAtivoValidator
+    tags: 
+      - { name: validator.constraint_validator, alias: unico_contrato_entidade_ativo }
+    arguments: ['@doctrine.orm.default_entity_manager']
