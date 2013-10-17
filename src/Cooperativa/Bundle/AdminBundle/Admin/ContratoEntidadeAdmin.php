@@ -30,10 +30,8 @@ class ContratoEntidadeAdmin extends Admin
     public function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('percentual')
-            ->add('ativo', null, array(
-                'editable' => true,
-            ))
+            ->addIdentifier('percentual')
+            ->add('ativo')
             ->add('entidade')
         ;
     }

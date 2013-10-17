@@ -33,9 +33,7 @@ class ProdutorContratoAdmin extends Admin
     {
         $listMapper
             ->addIdentifier('data')
-            ->add('ativo', null, array(
-                'editable' => true,
-            ))
+            ->add('ativo')
             ->addIdentifier('produtor')
         ;
     }
