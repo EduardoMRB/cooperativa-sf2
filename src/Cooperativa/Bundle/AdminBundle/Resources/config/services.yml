@@ -55,3 +55,9 @@ services:
     tags: 
       - { name: validator.constraint_validator, alias: unico_contrato_entidade_ativo }
     arguments: ['@doctrine.orm.default_entity_manager']
+
+  validator.unique.contrato.produtor.ativo:
+    class: Cooperativa\Bundle\AdminBundle\Validator\Constraints\UnicoContratoProdutorAtivoValidator
+    tags: 
+      - { name: validator.constraint_validator, alias: unico_contrato_produtor_ativo }
+    arguments: ['@doctrine.orm.default_entity_manager']

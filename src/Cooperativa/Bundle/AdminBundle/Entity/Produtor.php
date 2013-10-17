@@ -113,6 +113,6 @@ class Produtor
 
     public function __toString()
     {
-        return $this->nome;
+        return $this->getNome();
     }
 }

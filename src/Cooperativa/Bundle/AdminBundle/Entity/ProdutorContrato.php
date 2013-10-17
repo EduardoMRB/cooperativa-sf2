@@ -3,11 +3,12 @@
 namespace Cooperativa\Bundle\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\Common\Collections\ArrayCollection;
+use Cooperativa\Bundle\AdminBundle\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity()
  * @ORM\Table(name="contratoprodutor")
+ * @Assert\UnicoContratoProdutorAtivo
  */
 class ProdutorContrato
 {
@@ -73,11 +74,11 @@ class ProdutorContrato
     }
 
     /**
-     * @return mixed
+     * @return Produtor
      */
     public function getProdutor()
     {
-        return $this->contrato;
+        return $this->produtor;
     }
 
     /**

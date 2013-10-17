@@ -6,7 +6,7 @@ use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Doctrine\ORM\EntityManagerInterface;
 
-class UnicoContratoEntidadeAtivoValidator extends ConstraintValidator
+class UnicoContratoProdutorAtivoValidator extends ConstraintValidator
 {
     /**
      * @var EntityManagerInterface
@@ -18,18 +18,18 @@ class UnicoContratoEntidadeAtivoValidator extends ConstraintValidator
         $this->em = $em;
     }
 
-    public function validate($contratoEntidade, Constraint $constraint)
+    public function validate($contratoProdutor, Constraint $constraint)
     {
-        $manager = $this->em->getRepository('CooperativaAdminBundle:ContratoEntidade');
+        $manager = $this->em->getRepository('CooperativaAdminBundle:ProdutorContrato');
 
-        // Verifica se existe outro contrato ativo para mesma entidade
-        if ($contratoEntidade->getAtivo()) {
+        // Verifica se existe outro contrato ativo para mesmo produtor
+        if ($contratoProdutor->getAtivo()) {
             $contratosAtivos = $manager->findBy(array(
                 'ativo' => true,
-                'entidade' => $contratoEntidade->getEntidade(),
+                'produtor' => $contratoProdutor->getProdutor(),
             ));
         }
-
+        
         // Se existir, manda um erro de validacao para o campo "ativo"
         if ($contratosAtivos) {
             $this->context->addViolationAt('ativo', $constraint->message);
