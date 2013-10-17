@@ -22,13 +22,6 @@ class ProdutorContrato
     protected $id;
 
     /**
-     * @var integer
-     * 
-     * @ORM\Column(name="numero_entregas", type="integer")
-     */
-    protected $numeroEntregas;
-
-    /**
      * @var boolean
      * 
      * @ORM\Column(name="ativo", type="boolean")
@@ -104,22 +97,5 @@ class ProdutorContrato
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * @param int $numeroEntregas
-     */
-    public function setNumeroEntregas($numeroEntregas)
-    {
-        $this->numeroEntregas = $numeroEntregas;
-        return $this;
-    }
-
-    /**
-     * @return int
-     */
-    public function getNumeroEntregas()
-    {
-        return $this->numeroEntregas;
     }
 }

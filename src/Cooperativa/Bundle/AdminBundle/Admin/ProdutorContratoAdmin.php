@@ -12,7 +12,6 @@ class ProdutorContratoAdmin extends Admin
     public function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('numeroEntregas')
             ->add('ativo')
             ->add('data')
             ->add('produtor', 'sonata_type_model_list')
@@ -22,7 +21,6 @@ class ProdutorContratoAdmin extends Admin
     public function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('numeroEntregas')
             ->add('ativo')
             ->add('data')
             ->add('produtor')
