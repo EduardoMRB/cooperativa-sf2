@@ -54,16 +54,16 @@ services:
     class: Cooperativa\Bundle\AdminBundle\Validator\Constraints\UnicoContratoEntidadeAtivoValidator
     tags: 
       - { name: validator.constraint_validator, alias: unico_contrato_entidade_ativo }
-    arguments: ['@doctrine.orm.default_entity_manager']
+    arguments: [@doctrine]
 
   validator.unique.contrato.produtor.ativo:
     class: Cooperativa\Bundle\AdminBundle\Validator\Constraints\UnicoContratoProdutorAtivoValidator
     tags: 
       - { name: validator.constraint_validator, alias: unico_contrato_produtor_ativo }
-    arguments: ['@doctrine.orm.default_entity_manager']
+    arguments: [@doctrine]
 
   validator.percentual.entidade:
     class: Cooperativa\Bundle\AdminBundle\Validator\Constraints\PercentualEntidadeValidator
     tags:
       - { name: validator.constraint_validator, alias: percentual_entidade }
-    arguments: ['@doctrine.orm.default_entity_manager']
+    arguments: [@doctrine]

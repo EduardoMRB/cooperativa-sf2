@@ -4,23 +4,25 @@ namespace Cooperativa\Bundle\AdminBundle\Validator\Constraints;
 
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
-use Doctrine\ORM\EntityManagerInterface;
 
 class PercentualEntidadeValidator extends ConstraintValidator
 {
-    /**
-     * @var EntityManagerInterface
-     */
-    protected $em;
+    protected $doctrine;
 
-    public function __construct(EntityManagerInterface $em)
+    public function __construct($doctrine)
     {
-        $this->em = $em;
+        $this->doctrine = $doctrine;
     }
 
+    /**
+     * Verifica se o percentual das entidades ultrapassa 100%
+     * 
+     * @param integer value
+     * @param Constraint
+     */
     public function validate($value, Constraint $constraint)
     {
-        $manager = $this->em->getRepository('CooperativaAdminBundle:ContratoEntidade');
+        $manager = $this->doctrine->getManager()->getRepository('CooperativaAdminBundle:ContratoEntidade');
         $contratos = $manager->findBy(array('ativo' => true));
         $totalPercentual = 0;
 

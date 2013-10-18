@@ -4,23 +4,19 @@ namespace Cooperativa\Bundle\AdminBundle\Validator\Constraints;
 
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
-use Doctrine\ORM\EntityManagerInterface;
 
 class UnicoContratoEntidadeAtivoValidator extends ConstraintValidator
 {
-    /**
-     * @var EntityManagerInterface
-     */
-    protected $em;
+    protected $doctrine;
 
-    public function __construct(EntityManagerInterface $em)
+    public function __construct($doctrine)
     {
-        $this->em = $em;
+        $this->doctrine = $doctrine;
     }
 
     public function validate($contratoEntidade, Constraint $constraint)
     {
-        $manager = $this->em->getRepository('CooperativaAdminBundle:ContratoEntidade');
+        $manager = $this->doctrine->getManager()->getRepository('CooperativaAdminBundle:ContratoEntidade');
 
         // Verifica se existe outro contrato ativo para mesma entidade
         if ($contratoEntidade->getAtivo()) {
