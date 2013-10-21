@@ -27,7 +27,6 @@ class ContratoEntidade
      * @var float
      *
      * @ORM\Column(name="percentual", type="float")
-     * @Assert\PercentualEntidade
      */
     private $percentual;
 

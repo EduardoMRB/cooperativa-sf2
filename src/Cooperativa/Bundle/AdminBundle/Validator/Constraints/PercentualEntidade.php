@@ -13,6 +13,6 @@ class PercentualEntidade extends Constraint
 
     public function validateBy()
     {
-        return 'percentual_entidade';
+        return 'entidade_percentual';
     }
 }

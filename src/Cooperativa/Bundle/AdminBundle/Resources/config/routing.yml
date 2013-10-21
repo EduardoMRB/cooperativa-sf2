@@ -1,3 +1,0 @@
-cooperativa_admin_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: CooperativaAdminBundle:Default:index }

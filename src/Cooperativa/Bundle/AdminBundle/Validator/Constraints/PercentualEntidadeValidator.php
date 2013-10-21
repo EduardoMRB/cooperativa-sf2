@@ -4,12 +4,16 @@ namespace Cooperativa\Bundle\AdminBundle\Validator\Constraints;
 
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
+use Symfony\Bridge\Doctrine\RegistryInterface;
 
 class PercentualEntidadeValidator extends ConstraintValidator
-{
+{	
+	/**
+	 * @var RegistryInterface
+	 */
     protected $doctrine;
 
-    public function __construct($doctrine)
+    public function __construct(RegistryInterface $doctrine)
     {
         $this->doctrine = $doctrine;
     }

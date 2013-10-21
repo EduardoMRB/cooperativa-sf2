@@ -64,6 +64,6 @@ services:
 
   validator.percentual.entidade:
     class: Cooperativa\Bundle\AdminBundle\Validator\Constraints\PercentualEntidadeValidator
-    tags:
-      - { name: validator.constraint_validator, alias: percentual_entidade }
     arguments: [@doctrine]
+    tags:
+     - { name: validator.constraint_validator, alias: entidade_percentual }
