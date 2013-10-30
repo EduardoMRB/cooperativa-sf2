@@ -6,6 +6,7 @@ web1:
       - app/cache
       - app/logs
       - web/uploads
+      - var/logs
  
   ################################################
   ## WEB SPECIFIC SETTINGS
