@@ -41,10 +41,11 @@ web1:
   ################################################
   # this config works with app/cache in shared writables
   after_build:
-    # - "cp app/config/parameters.yml.pagoda app/config/parameters.yml"
-    # - "curl -s http://getcomposer.org/installer | php"
-    # - "php composer.phar install --prefer-source --no-dev"
-    # - "php app/console --env=prod --no-debug assetic:dump -n"
+    - "cp app/config/parameters.yml.pagoda app/config/parameters.yml"
+    - "curl -s http://getcomposer.org/installer | php"
+    - "php composer.phar install --prefer-source --no-dev"
+    - "php app/console --env=prod --no-debug assetic:dump -n"
   before_deploy:
-    # - "app/console cache:clear --env=prod"
-    # - "app/console doctrine:schema:update --force"
+    - "app/console cache:clear --env=prod"
+    - "app/console doctrine:schema:update --force"
+    - "app/console fos:user:create --super-admin admin admin@email.com admin"
