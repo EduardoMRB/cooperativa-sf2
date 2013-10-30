@@ -49,4 +49,3 @@ web1:
   before_deploy:
     - "app/console cache:clear --env=prod"
     - "app/console doctrine:schema:update --force"
-    - "app/console fos:user:create --super-admin admin admin@email.com admin"
