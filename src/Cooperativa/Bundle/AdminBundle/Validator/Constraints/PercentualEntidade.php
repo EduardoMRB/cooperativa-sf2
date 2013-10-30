@@ -9,6 +9,7 @@ use Symfony\Component\Validator\Constraint;
  */
 class PercentualEntidade extends Constraint
 {
+    // Em caso de erro de validação, é apresentada essa mensagem
     public $message = 'Os percentuais de entidade cadastrados não podem exceder 100%';
 
     public function validateBy()

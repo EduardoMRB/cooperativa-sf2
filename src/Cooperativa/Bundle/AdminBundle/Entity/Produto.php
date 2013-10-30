@@ -77,4 +77,9 @@ class Produto
     {
         return $this->valorKg;
     }
+
+    public function __toString()
+    {
+        return $this->getNome();
+    }
 }

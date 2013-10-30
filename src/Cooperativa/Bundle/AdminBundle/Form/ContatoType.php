@@ -17,6 +17,9 @@ class ContatoType extends AbstractType
         ;
     }
 
+    /**
+     * Adiciona entidade responsavel pelo formulario
+     */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
@@ -24,6 +27,9 @@ class ContatoType extends AbstractType
         ));
     }
 
+    /**
+     * Identifica formulario com um nome
+     */
     public function getName()
     {
         return 'cooperativa_form_contato';

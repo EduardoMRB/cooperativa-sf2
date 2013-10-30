@@ -1,0 +1,3 @@
+Relatório informando a quantidade de produtos que serão entregues para cada entidade baseado no percentual cadastrado nos contratos
+
+Trocar nome de seção estoque para entregas

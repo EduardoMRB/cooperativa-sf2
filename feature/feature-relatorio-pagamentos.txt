@@ -1,0 +1,3 @@
+- Criar relatorio para identificar a quantidade de entregas por produtor com quantidade, produto e valor
+
+- adicionar data para entrega
