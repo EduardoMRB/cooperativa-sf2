@@ -9,7 +9,7 @@
         "twig/twig": "~1.12",
         "twig/extensions": "~1.0",
 
-        "symfony/icu": "2.1.*",
+        "symfony/icu": "1.1.*",
         "symfony/symfony": "~2.3",
         "symfony/assetic-bundle": "~2.3",
         "symfony/swiftmailer-bundle": "~2.3",
