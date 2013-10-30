@@ -1,0 +1,25 @@
+parameters:
+    database_driver:   pdo_mysql
+    database_host:     %database.host%
+    database_name:     %database.name%
+    database_user:     %database.user%
+    database_password: %database.pass%
+
+    mailer_transport:   smtp
+    mailer_host:        localhost
+    mailer_user:
+    mailer_password:
+
+    locale:             pt_BR
+
+    secret:             ThisTokenIsNotSoSecretChangeIt
+
+    # Sonata Admin Options
+    sonata_admin.title:             Cooperativa UNIVAG
+    sonata_admin.logo_title:        /bundles/sonataadmin/logo_title.png
+
+    # Sonata Media options
+    sonata_media.cdn.host:          /uploads/media
+
+    # Sonata User Options
+    sonata_user.google_authenticator.server:  demo.sonata-project.org

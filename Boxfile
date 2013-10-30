@@ -1,0 +1,50 @@
+web1:
+  ################################################
+  ## GENERAL SETTINGS
+  ################################################
+  shared_writable_dirs:
+      - app/cache
+      - app/logs
+      - web/uploads
+ 
+  ################################################
+  ## WEB SPECIFIC SETTINGS
+  ################################################
+  document_root: web
+  default_gateway: app.php
+  index_list: [app.php]
+ 
+  ################################################
+  ## PHP SPECIFIC SETTINGS
+  ################################################
+  php_version: 5.4.14
+  php_extensions:
+    - intl
+    - mbstring
+    - xsl
+    - mysql
+    - posix
+    - iconv
+    - tokenizer
+    - xml
+    - pdo_mysql
+    - zip
+    - curl
+    - gd
+  php_session_autostart: Off
+  php_short_open_tag: Off
+  magic_quotes_gpc: Off
+  php_date_timezone: "America/Cuiaba"
+
+################################################
+  ## DEPLOYMENT HOOKS
+  ################################################
+  # this config works with app/cache in shared writables
+  after_build:
+    # - "cp app/config/parameters.yml.pagoda app/config/parameters.yml"
+    # - "curl -s http://getcomposer.org/installer | php"
+    # - "php composer.phar install --prefer-source --no-dev"
+    # - "php app/console --env=prod --no-debug assetic:dump -n"
+  before_deploy:
+    # - "app/console cache:clear --env=prod"
+    # - "app/console doctrine:schema:update --force"
