@@ -50,6 +50,12 @@ services:
       - { name: sonata.admin, manager_type: orm, group: Operações, label: Contrato de entidade }
     arguments: [null, Cooperativa\Bundle\AdminBundle\Entity\ContratoEntidade, null]
 
+  sonata.admin.relatorio_entidade:
+    class: Cooperativa\Bundle\AdminBundle\Admin\RelatorioEntidadeAdmin
+    tags:
+      - { name: sonata.admin, manager_type: orm, group: Relatórios, label: Relatório de entidade }
+    arguments: [null, Cooperativa\Bundle\AdminBundle\Entity\ContratoEntidade, null]
+
   validator.unique.contrato.entidade.ativo:
     class: Cooperativa\Bundle\AdminBundle\Validator\Constraints\UnicoContratoEntidadeAtivoValidator
     tags: 
