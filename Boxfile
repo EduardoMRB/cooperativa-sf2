@@ -52,5 +52,3 @@ web1:
     - "php app/console --env=prod --no-debug assetic:dump -n"
   before_deploy:
     - "app/console cache:clear --env=prod"
-    - "app/console doctrine:schema:update --force"
-    - "app/console cache:clear --env=prod"
