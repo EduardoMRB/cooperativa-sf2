@@ -37,6 +37,9 @@ web1:
   php_short_open_tag: Off
   magic_quotes_gpc: Off
   php_date_timezone: "America/Cuiaba"
+  php_default_locale: pt_BR
+  php_display_errors: On
+  php_error_log: true
 
 ################################################
   ## DEPLOYMENT HOOKS
@@ -50,3 +53,4 @@ web1:
   before_deploy:
     - "app/console cache:clear --env=prod"
     - "app/console doctrine:schema:update --force"
+    - "app/console cache:clear --env=prod"
